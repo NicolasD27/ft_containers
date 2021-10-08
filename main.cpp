@@ -4,10 +4,6 @@
 #include <map>
 #include <vector>
 #include <stack>
-// #include "vector.hpp"
-// #include "map.hpp"
-// #include "stack.hpp"
-// #include "utility.hpp"
 #include <stdlib.h>
 
 #if STL //CREATE A REAL STL EXAMPLE
@@ -17,9 +13,9 @@
 	namespace ft = std;
 	
 #else
-	#include "map.hpp"
-	#include "stack.hpp"
-	#include "vector.hpp"
+	#include "containers/map.hpp"
+	#include "containers/stack.hpp"
+	#include "containers/vector.hpp"
 #endif
 #include <list>
 

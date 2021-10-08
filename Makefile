@@ -15,10 +15,10 @@ CFLAGS  		= -Wall -Wextra -Werror -std=c++98
 
 all:         $(NAME) $(NAME_TEST)
 
-$(NAME):	$(OBJS) vector.hpp stack.hpp utility.hpp map.hpp
+$(NAME):	$(OBJS) containers/vector.hpp containers/stack.hpp utility.hpp containers/map.hpp
 			$(CC) -DSTL=0 -o $(NAME) $(CFLAGS) $(SRCS)
 
-$(NAME_TEST):	$(OBJS) vector.hpp stack.hpp utility.hpp map.hpp
+$(NAME_TEST):	$(OBJS) containers/vector.hpp containers/stack.hpp utility.hpp containers/map.hpp
 				$(CC) -DSTL=1 $(CFLAGS) -o $(NAME_TEST) $(SRCS)
 
 
