@@ -76,6 +76,7 @@ public:
     typedef pair<const Key, T> value_type;
     typedef Compare key_compare; 
     typedef Alloc allocator_type;
+	typedef typename allocator_type::template rebind<Node>::other node_allocator_type; 
     typedef typename allocator_type::reference reference;
     typedef typename allocator_type::const_reference  const_reference;
     typedef typename allocator_type::pointer pointer;
@@ -91,7 +92,7 @@ private:
     Node* _root;
     Node* _lastElem;
     allocator_type _allocPair;
-    std::allocator<Node> _allocNode;
+    node_allocator_type _allocNode;
     key_compare _comp;
     size_type _size;
 
@@ -452,10 +453,6 @@ public:
     bool empty() const { return _size == 0; }
 
     
-    friend void swap (map<Key,T,Compare,Alloc>& x, map<Key,T,Compare,Alloc>& y)
-    {
-        x.swap(y);
-    }
 
     friend bool operator== ( const ft::map<Key,T,Compare,Alloc>& lhs,
                         const ft::map<Key,T,Compare,Alloc>& rhs )
@@ -658,6 +655,9 @@ private:
         b = tmp;
     }
 };
+
+template <class Key, class T, class Compare, class Alloc>
+void swap (map<Key,T,Compare,Alloc>& x, map<Key,T,Compare,Alloc>& y) { x.swap(y); }
 }
 
 

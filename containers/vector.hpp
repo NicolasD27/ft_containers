@@ -323,7 +323,6 @@ public:
 
     const_reference back() const { return _vector[_size - 1]; }
 
-    friend void swap (vector& x, vector& y)                         { x.swap(y); }
 
     friend bool operator== (const vector& lhs, const vector& rhs) {
         if (lhs.size() != rhs.size())
@@ -394,6 +393,9 @@ private:
         b = tmp;
     }
 };
+
+template <class T, class Alloc>
+  void swap (vector<T,Alloc>& x, vector<T,Alloc>& y) { x.swap(y); }
 }
 
 #endif

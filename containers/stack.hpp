@@ -17,14 +17,14 @@ template <class T, class Container = ft::vector<T> >
 class stack
 {
 
-public:
+protected:
     typedef T 			value_type;
     typedef Container	container_type;
     typedef ptrdiff_t	size_type;
 
 
 
-
+public:
     explicit stack (const container_type& ctnr = container_type())
     {
     	c = ctnr;
