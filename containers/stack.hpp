@@ -17,14 +17,13 @@ template <class T, class Container = ft::vector<T> >
 class stack
 {
 
-protected:
+public:
     typedef T 			value_type;
     typedef Container	container_type;
     typedef ptrdiff_t	size_type;
 
 
 
-public:
     explicit stack (const container_type& ctnr = container_type())
     {
     	c = ctnr;
@@ -83,6 +82,7 @@ public:
     
     friend bool operator>= (const stack<T,Container>& lhs, const stack<T,Container>& rhs) { return (!(lhs < rhs)); }
 
+protected:
 	container_type c;
 
    
